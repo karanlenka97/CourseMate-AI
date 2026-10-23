@@ -1,0 +1,64 @@
+Correlation vs Covariance in Statistics
+
+Introduction
+
+In statistics and data science, understanding relationships between variables is extremely important. Two fundamental measures used to describe relationships between variables are covariance and correlation. Although they work together, they differ in scale, interpretation, and usefulness.
+
+1. Covariance
+
+Covariance measures the direction of the relationship between two variables.
+
+Formula:
+
+Cov(X, Y) = E[(X - μX)(Y - μY)]
+
+Where:
+
+- X, Y = the two variables
+- μX, μY = the means of X and Y
+
+Interpretation:
+
+- Positive covariance: both variables tend to move in the same direction.
+- Negative covariance: the variables tend to move in opposite directions.
+- Covariance close to zero: no clear linear relationship.
+
+Limitations of covariance:
+
+- Its magnitude depends on the units of measurement.
+- It is difficult to compare across datasets.
+- Its values are unbounded.
+
+ 2. Correlation
+
+Correlation measures both the direction and strength of the relationship between two variables. Unlike covariance, correlation is standardized and always lies between `-1` and `+1`.
+
+Pearson correlation formula:
+
+r = Cov(X, Y) / (σX × σY)
+
+Where:
+
+- Cov(X, Y) = covariance between X and Y
+- σX, σY = standard deviations of X and Y
+
+Interpretation:
+
+- r = +1: perfectly positive linear relationship.
+- r = -1: perfectly negative linear relationship.
+- r = 0: no linear relationship.
+- Values between `0` and `+1` indicate the strength of a positive relationship.
+- Values between `-1` and `0` indicate the strength of a negative relationship.
+
+3. Example
+
+Suppose we measure study hours and exam scores. As study hours increase, exam scores also increase. Therefore, the covariance will be positive, and the correlation will be between `0` and `+1`. If the relationship is strong, `r` will be close to `+1`; if it is weak, `r` will be closer to `0`.
+
+4. Covariance vs. Correlation
+
+- Covariance shows the direction of the relationship; its magnitude depends on the variables’ units and it is unbounded.
+- Correlation shows both direction and strength on a standardized scale from `-1` to `+1`, so it is easier to interpret and compare.
+
+Conclusion
+
+Covariance and correlation help us understand relationships between variables. Correlation standardizes this relationship, making it easier to interpret and compare in real-world data science applications.
