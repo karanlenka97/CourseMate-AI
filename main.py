@@ -12,7 +12,7 @@ data = PyPDFLoader("document loaders/GRU.pdf")
 docs = data.load()
 
 template = ChatPromptTemplate.from_messages([
-    ("system", "You are an AI that summarizes text and give correct replies."),
+    ("system", "You are an AI that summarizes text."),
     ("human", "{data}"),
 ])
 
