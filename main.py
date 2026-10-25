@@ -1,12 +1,13 @@
 from pathlib import Path
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_community.document_loaders import TextLoader
+from langchain_community.document_loaders import PyPDFLoader #pdf loader
 from langchain_core.prompts import ChatPromptTemplate
 
-load_dotenv(Path(__file__).resolve().parent / ".env")
+load_dotenv(Path(__file__).resolve().parent / ".env") 
 
-docs = TextLoader("document loaders/notes.txt", encoding="utf-8").load()
+data = PyPDFLoader("document loaders/GRU.pdf")
+docs = data.load()
 
 template = ChatPromptTemplate.from_messages([
     ("system", "You are an AI that summarizes text."),
