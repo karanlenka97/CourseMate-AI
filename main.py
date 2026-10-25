@@ -19,6 +19,6 @@ template = ChatPromptTemplate.from_messages([
 model = ChatGoogleGenerativeAI(model="gemini-3.5-flash-lite")
 
 prompt = template.format_prompt(data=docs[0].page_content)
-result = model.invoke(prompt)
+results = model.invoke(prompt)
 
 print(result.content)
