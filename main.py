@@ -2,9 +2,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.document_loaders import PyPDFLoader #pdf loader
+from langchain_community.document_loaders import WebBaseLoader #web page loader
 from langchain_core.prompts import ChatPromptTemplate
 
-load_dotenv(Path(__file__).resolve().parent / ".env") 
+load_dotenv() 
 
 data = PyPDFLoader("document loaders/GRU.pdf")
 docs = data.load()
