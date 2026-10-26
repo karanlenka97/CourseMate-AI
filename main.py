@@ -11,6 +11,12 @@ load_dotenv()
 data = PyPDFLoader("document loaders/GRU.pdf")
 docs = data.load()
 
+spillter = RecursiveCharacterTextSplitter(
+    chunks_size = 1000,
+    chunks_overlap = 200
+)
+chunks = spillter.split_documents(docs)
+
 template = ChatPromptTemplate.from_messages([
     ("system", "You are an AI that summarizes text."),
     ("human", "{data}"),
@@ -21,4 +27,4 @@ model = ChatGoogleGenerativeAI(model="gemini-3.5-flash-lite")
 prompt = template.format_prompt(data=docs[0].page_content)
 results = model.invoke(prompt)
 
-print(result.content)
+print(results.content)
