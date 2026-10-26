@@ -8,7 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate
 
 load_dotenv() 
 
-data = PyPDFLoader("document loaders/GRU.pdf")
+data = PyPDFLoader("document loaders/deeplearning.pdf")
 docs = data.load()
 
 spillter = RecursiveCharacterTextSplitter(
@@ -24,7 +24,7 @@ template = ChatPromptTemplate.from_messages([
 
 model = ChatGoogleGenerativeAI(model="gemini-3.5-flash-lite")
 
-prompt = template.format_prompt(data=docs[0].page_content)
+prompt = template.format_prompt(data=chunks[0].page_content)
 results = model.invoke(prompt)
 
 print(results.content)
