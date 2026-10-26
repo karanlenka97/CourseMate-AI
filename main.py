@@ -11,11 +11,11 @@ load_dotenv()
 data = PyPDFLoader("document loaders/deeplearning.pdf")
 docs = data.load()
 
-spillter = RecursiveCharacterTextSplitter(
-    chunks_size = 1000,
-    chunks_overlap = 200
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size = 1000,
+    chunk_overlap = 200
 )
-chunks = spillter.split_documents(docs)
+chunks = splitter.split_documents(docs)
 
 template = ChatPromptTemplate.from_messages([
     ("system", "You are an AI that summarizes text."),
