@@ -1,6 +1,6 @@
-from langchain_core.documents import Document
-from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_core.documents import Document #to create document
+from langchain_community.vectorstores import Chroma #vector store chroma db import
+from langchain_community.embeddings import HuggingFaceEmbeddings #embedding models 
 from langchain_classic.retrievers.multi_query import MultiQueryRetriever
 from langchain_mistralai import ChatMistralAI
 from dotenv import load_dotenv
