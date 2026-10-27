@@ -25,11 +25,11 @@ vectorstore = Chroma.from_documents(docs, embeddings)
 retriever = vectorstore.as_retriever()
 
 
-llm = ChatMistralAI(model="mistral-small-latest")
+llms = ChatMistralAI(model="mistral-small-latest")
 
 multi_query_retriever = MultiQueryRetriever.from_llm(
     retriever=retriever,
-    llm=llm
+    llm=llms
 )
 
 query = "What is gradient descent?"
