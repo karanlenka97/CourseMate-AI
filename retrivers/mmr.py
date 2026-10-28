@@ -1,6 +1,6 @@
-from langchain_core.documents import Document
-from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_core.documents import Document #create your own document
+from langchain_community.vectorstores import Chroma #import vector store
+from langchain_community.embeddings import HuggingFaceEmbeddings #embedding model
 
 docs = [
     Document(page_content="Gradient descent is an optimization algorithm used in machine learning."),
