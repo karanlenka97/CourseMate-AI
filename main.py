@@ -4,7 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.document_loaders import PyPDFLoader #pdf loader
 from langchain_community.document_loaders import WebBaseLoader #web page loader
 from langchain_text_splitters import RecursiveCharacterTextSplitter #for txt files
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate #sys,human role division
 
 load_dotenv() 
 
