@@ -50,3 +50,24 @@ Question:
     ]
 )
 
+print("Rag system created ")
+
+print("press 0 to exit ")
+
+while True:
+    query = input("\nYou: ")
+
+    if query == "0":
+        print("Exiting the program.")
+        break
+
+    docs = retriever.invoke(query)
+
+    context = "\n\n".join([doc.page_content for doc in docs])
+
+    response = llm.invoke(
+        prompt.format_prompt(context=context, question=query).to_messages()
+    )
+
+    print("\nAnswer:\n")
+    print(f"\n AI: {response.content}")
