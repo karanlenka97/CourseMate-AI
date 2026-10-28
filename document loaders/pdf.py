@@ -1,5 +1,7 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import TokenTextSplitter
+#imported pypdf loader for loading pdf
+#imported for text split for embeddings
 
 data = PyPDFLoader("document loaders/GRU.pdf")
 
