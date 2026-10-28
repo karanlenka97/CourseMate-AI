@@ -1,4 +1,5 @@
 from langchain_community.document_loaders import WebBaseLoader
+#webpage loading module
 
 url = "https://www.apple.com/in/macbook-pro/"
 
