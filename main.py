@@ -7,3 +7,10 @@ from langchain_community.embeddings import FastEmbedEmbeddings
 
 load_dotenv()
 
+embeddings = FastEmbedEmbeddings()
+
+vectorstore = Chroma(
+    persist_directory="chroma_db", 
+    embedding_function=embeddings
+)
+
