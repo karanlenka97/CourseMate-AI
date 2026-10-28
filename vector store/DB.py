@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 from langchain_chroma import Chroma #import vector store
 from langchain_core.documents import Document #create your own document
 from langchain_google_genai import GoogleGenerativeAIEmbeddings #embedding model
+from langchain_community.embeddings import HuggingFaceEmbeddings 
 
 load_dotenv()
 
@@ -20,9 +21,7 @@ docs = [
     ),
 ]
 
-embeddings_model = GoogleGenerativeAIEmbeddings(
-    model="gemini-embedding-001"
-)
+embeddings_model = HuggingFaceEmbeddings()
 
 vectorstore = Chroma.from_documents(
     documents=docs,
