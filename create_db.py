@@ -5,10 +5,9 @@
 
 from langchain_community.document_loaders import PyPDFLoader #pdf loader
 from langchain_text_splitters import RecursiveCharacterTextSplitter #for txt files
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
 from dotenv import load_dotenv
-
+from langchain_community.embeddings import FastEmbedEmbeddings
 load_dotenv()
 
 data = PyPDFLoader("document loaders/deeplearning.pdf")
@@ -20,7 +19,8 @@ splitter = RecursiveCharacterTextSplitter(
 )
 chunks = splitter.split_documents(docs)
 
-embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
+
+embeddings = FastEmbedEmbeddings()
 
 vectorstore = Chroma.from_documents(
     documents=chunks,
