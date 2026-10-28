@@ -1,8 +1,9 @@
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+#imported text loaders
 
 splitter = RecursiveCharacterTextSplitter(
-    separators=["\n\n", "\n", " ", ""],
+    separators=["\n\n", "\n", " ", ""], #check for multiple separators
     chunk_size=10, 
     chunk_overlap=1)
 
