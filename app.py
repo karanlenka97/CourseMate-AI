@@ -1,7 +1,4 @@
-"""A polished Streamlit interface for a document-grounded RAG assistant."""
-
 from __future__ import annotations
-
 import hashlib
 import html
 import os
