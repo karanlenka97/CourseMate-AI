@@ -251,3 +251,5 @@ if question:
                 st.error(f"I couldn't answer that just now. Check the Gemini connection and try again. Details: {exc}")
 
 st.markdown('<div class="composer-spacer"></div><div class="powered">Powered by Google Generative AI (Gemini) &amp; LangChain</div>', unsafe_allow_html=True)
+
+
