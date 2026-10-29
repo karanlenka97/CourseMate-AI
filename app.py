@@ -71,11 +71,9 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
 @st.cache_resource(show_spinner="Preparing your document search…")
 def get_embeddings() -> FastEmbedEmbeddings:
     return FastEmbedEmbeddings()
-
 
 @st.cache_resource(show_spinner=False)
 def get_vectorstore() -> Chroma:
