@@ -28,4 +28,3 @@ vectorstore = Chroma.from_documents(
     persist_directory="chroma_db",
 )
 
-#
