@@ -27,3 +27,5 @@ vectorstore = Chroma.from_documents(
     embedding=embeddings,
     persist_directory="chroma_db",
 )
+
+#
